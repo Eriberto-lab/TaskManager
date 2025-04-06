@@ -1,0 +1,59 @@
+# Build results
+bin/
+obj/
+out/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Mono Auto Generated Files
+mono_crash.*
+
+# VS Code
+.vscode/
+
+# Rider
+.idea/
+
+# Visual Studio
+.vs/
+
+# DotCover
+.idea/.dotCover
+
+# Test results
+TestResults/
+
+# Coverage reports
+coverage/
+coverage-report/
+*.coverage
+*.coveragexml
+*.cobertura.xml
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# EF Migrations (if unwanted)
+# Migrations/
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+
+# Others
+*.dbmdl
+*.bak
+*.sqlite
+*.mdf
+*.ldf
+*.sdf
