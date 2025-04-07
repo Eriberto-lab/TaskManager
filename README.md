@@ -1,4 +1,6 @@
 # TaskManager API
+🔗 [Repositório no GitHub](https://github.com/Eriberto-lab/TaskManager)
+
 
 Sistema de Gestão de Tarefas desenvolvido em .NET 8, aplicando princípios de Clean Architecture, SOLID e cobertura total de testes automatizados. O objetivo é oferecer uma API RESTful robusta, com foco em boas práticas de desenvolvimento e facilidade de manutenção.
 
@@ -10,7 +12,7 @@ Sistema de Gestão de Tarefas desenvolvido em .NET 8, aplicando princípios de C
 - [Como Executar o Projeto](#como-executar-o-projeto)
 - [Testes e Cobertura](#testes-e-cobertura)
 - [Exemplos de Requisição e Resposta](#exemplos-de-requisição-e-resposta)
-- [Considerações Finais](#considerações-finais)
+
 
 ---
 
@@ -98,7 +100,18 @@ TaskManager
    coveragereport/index.html
    ```
 
-> 100% de cobertura na camada `Application`.
+> ## Cobertura de Testes
+
+Este projeto possui testes automatizados com foco na camada `Application`, onde se concentram as regras de negócio.
+
+> ✅ 100% de cobertura na camada `Application`.
+
+### 📊 Relatório de Cobertura
+
+![Relatório de Cobertura](./Assets/coverage-report.png)
+
+*Relatório gerado com Coverlet e ReportGenerator*
+
 
 ---
 
@@ -116,9 +129,8 @@ TaskManager
 ```
 **Response:**
 ```json
-{
-  201
-}
+Status: 201 Created
+
 ```
 
 ### Listar Tarefas com Filtro (GET /api/tasks?status=Pending&startDate=2025-04-01&endDate=2025-04-10)
