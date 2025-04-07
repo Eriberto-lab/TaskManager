@@ -4,10 +4,11 @@ using TaskManager.Domain.Enums;
 using TaskManager.Domain.Interfaces;
 using TaskManager.CrossCutting.Exceptions;
 using Microsoft.Extensions.Logging;
+using TaskManager.Application.Interfaces;
 
 namespace TaskManager.Application.Services
 {
-    public class TaskService
+    public class TaskService : ITaskService
     {
         private readonly ITaskRepository _taskRepository;
         private readonly ILogger<TaskService> _logger;

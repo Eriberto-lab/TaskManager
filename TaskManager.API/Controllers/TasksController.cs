@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TaskManager.Application.DTOs;
-using TaskManager.Application.Services;
+using TaskManager.Application.Interfaces;
 
 namespace TaskManager.API.Controllers
 {
@@ -10,9 +10,9 @@ namespace TaskManager.API.Controllers
     public class TasksController : ControllerBase
     {
 
-        private readonly TaskService _taskService;
+        private readonly ITaskService _taskService;
 
-        public TasksController(TaskService taskService)
+        public TasksController(ITaskService taskService)
         {
             _taskService = taskService;
         }
