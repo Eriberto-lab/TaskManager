@@ -17,8 +17,12 @@ namespace TaskManager.API.Validators
                 .MaximumLength(500)
                 .WithMessage("Description must not exceed 500 characters.");
             RuleFor(x => x.DueDate)
-                .GreaterThan(DateTime.Now)
+                .GreaterThan(DateTime.UtcNow)
                 .WithMessage("Due date must be in the future.");
+            RuleFor(x => x.Status)
+    .Must(BeAValidStatus)
+    .WithMessage("Status inválido.");
+
         }
         private bool BeAValidStatus(string status)
         {

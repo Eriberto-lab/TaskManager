@@ -19,14 +19,14 @@ namespace TaskManager.API.Validators
                 .WithMessage("Description must not exceed 500 characters.");
 
             RuleFor(x => x.DueDate)
-                .GreaterThan(DateTime.Now)
+                .GreaterThan(DateTime.UtcNow)
                 .WithMessage("Due date must be in the future.");
+
+
+
         }
     
     
-        private bool BeAValidStatus(string status)
-    {
-        return Enum.TryParse<TaskItemStatus>(status, true, out _);
-    }
+ 
 }
 }
