@@ -1,4 +1,6 @@
 # TaskManager API
+🔗 [Repositório no GitHub](https://github.com/Eriberto-lab/TaskManager)
+
 
 Sistema de Gestão de Tarefas desenvolvido em .NET 8, aplicando princípios de Clean Architecture, SOLID e cobertura total de testes automatizados. O objetivo é oferecer uma API RESTful robusta, com foco em boas práticas de desenvolvimento e facilidade de manutenção.
 
