@@ -98,7 +98,18 @@ TaskManager
    coveragereport/index.html
    ```
 
-> 100% de cobertura na camada `Application`.
+> ## Cobertura de Testes
+
+Este projeto possui testes automatizados com foco na camada `Application`, onde se concentram as regras de negócio.
+
+> ✅ 100% de cobertura na camada `Application`.
+
+### 📊 Relatório de Cobertura
+
+![Relatório de Cobertura](./Assets/coverage-report.png)
+
+*Relatório gerado com Coverlet e ReportGenerator*
+
 
 ---
 
