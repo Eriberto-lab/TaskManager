@@ -9,19 +9,18 @@ namespace TaskManager.API.Validators
         public UpdateTaskDtoValidator()
         {
             RuleFor(x => x.Title)
-                .NotEmpty()
-                .WithMessage("Title is required.")
-                .MaximumLength(100)
-                .WithMessage("Title must not exceed 100 characters.");
+               .NotEmpty()
+               .WithMessage("O título é obrigatório.")
+               .MaximumLength(100)
+               .WithMessage("O título não pode ultrapassar 100 caracteres.");
+
             RuleFor(x => x.Description)
                 .MaximumLength(500)
-                .WithMessage("Description must not exceed 500 characters.");
-            RuleFor(x => x.DueDate)
-                .GreaterThan(DateTime.UtcNow)
-                .WithMessage("Due date must be in the future.");
+                .WithMessage("A descrição não pode ultrapassar 500 caracteres.");
+
             RuleFor(x => x.Status)
-    .Must(BeAValidStatus)
-    .WithMessage("Status inválido.");
+                .Must(BeAValidStatus)
+                .WithMessage("Status inválido.");
 
         }
         private bool BeAValidStatus(string status)

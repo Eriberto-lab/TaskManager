@@ -9,24 +9,33 @@ namespace TaskManager.API.Validators
         public CreateTaskDtoValidator()
         {
             RuleFor(x => x.Title)
-                .NotEmpty()
-                .WithMessage("Title is required.")
-                .MaximumLength(100)
-                .WithMessage("Title must not exceed 100 characters.");
+                .NotEmpty().WithMessage("O título é obrigatório.")
+                .MaximumLength(100).WithMessage("O título deve ter no máximo 100 caracteres.");
 
             RuleFor(x => x.Description)
-                .MaximumLength(500)
-                .WithMessage("Description must not exceed 500 characters.");
+                .MaximumLength(500).WithMessage("A descrição deve ter no máximo 500 caracteres.");
 
             RuleFor(x => x.DueDate)
-                .GreaterThan(DateTime.UtcNow)
-                .WithMessage("Due date must be in the future.");
+                .Must(FutureDateOnly)
+                .When(x => x.DueDate.HasValue)
+                .WithMessage("A data de vencimento deve ser futura (apenas dia/mês/ano).");
 
 
 
         }
-    
-    
- 
-}
+
+        private bool FutureDateOnly(DateTime? dueDate)
+        {
+            if (!dueDate.HasValue)
+                return true;
+
+            var hoje = DateTime.Today;
+            var dataInformada = dueDate.Value.Date;
+
+            return dataInformada > hoje;
+        }
+
+
+
+    }
 }

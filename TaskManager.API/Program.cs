@@ -8,6 +8,7 @@ using FluentValidation;
 using FluentValidation.AspNetCore;
 using TaskManager.API.Validators;
 using TaskManager.CrossCutting.Middlewares;
+using TaskManager.Application.Interfaces;
 
 
 
@@ -33,7 +34,7 @@ builder.Services.AddDbContext<TaskDbContext>(opt =>
     opt.UseInMemoryDatabase("TaskDb"));
 
 builder.Services.AddScoped<ITaskRepository, TaskRepository>();
-builder.Services.AddScoped<TaskService>();
+builder.Services.AddScoped<ITaskService, TaskService>();
 builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddValidatorsFromAssemblyContaining<CreateTaskDtoValidator>();
 builder.Services.AddValidatorsFromAssemblyContaining<UpdateTaskDtoValidator>();
