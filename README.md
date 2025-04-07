@@ -127,9 +127,8 @@ Este projeto possui testes automatizados com foco na camada `Application`, onde 
 ```
 **Response:**
 ```json
-{
-  201
-}
+Status: 201 Created
+
 ```
 
 ### Listar Tarefas com Filtro (GET /api/tasks?status=Pending&startDate=2025-04-01&endDate=2025-04-10)
