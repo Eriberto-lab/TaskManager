@@ -10,7 +10,7 @@ Sistema de Gestão de Tarefas desenvolvido em .NET 8, aplicando princípios de C
 - [Como Executar o Projeto](#como-executar-o-projeto)
 - [Testes e Cobertura](#testes-e-cobertura)
 - [Exemplos de Requisição e Resposta](#exemplos-de-requisição-e-resposta)
-- [Considerações Finais](#considerações-finais)
+
 
 ---
 
