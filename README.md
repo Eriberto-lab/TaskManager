@@ -1,6 +1,6 @@
 # TaskManager API
 
-Sistema de Gestão de Tarefas desenvolvido em .NET 8 utilizando arquitetura limpa (Clean Architecture), com foco em boas práticas de código, testes automatizados e manutenção.
+Sistema de Gestão de Tarefas desenvolvido em .NET 8, aplicando princípios de Clean Architecture, SOLID e cobertura total de testes automatizados. O objetivo é oferecer uma API RESTful robusta, com foco em boas práticas de desenvolvimento e facilidade de manutenção.
 
 ## Sumário
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
@@ -135,18 +135,53 @@ TaskManager
 ]
 ```
 
----
-
-## Considerações Finais
-- Projeto estruturado para facilitar a manutenção e extensibilidade.
-- Testes com alta cobertura garantem maior confiança em futuras mudanças.
-- Middleware genérico para tratamento centralizado de exceções.
 
 ---
 
-**Autor:** Eriberto Lima
+## ✅ Atendimento aos Requisitos do Desafio
+
+### Funcionalidades da Aplicação
+
+| Requisito                                                                                      | Status | Observação                                                       |
+| ---------------------------------------------------------------------------------------------- | ------ | ---------------------------------------------------------------- |
+| Criar nova tarefa com título (obrigatório), descrição e data de vencimento (opcional) e status | ✅      | Implementado com DTO, validação e enum para status               |
+| Retornar um código único para cada tarefa criada                                               | ✅      | ID é gerado automaticamente (GUID)                               |
+| Visualizar todas as tarefas                                                                    | ✅      | Endpoint de listagem implementado                                |
+| Filtrar tarefas por status e/ou data de vencimento                                             | ✅      | Adicionado inclusive filtro por intervalo de datas como melhoria |
+| Editar uma tarefa existente (título, descrição, status, vencimento)                            | ✅      | Totalmente funcional                                             |
+| Excluir uma tarefa                                                                             | ✅      | Endpoint implementado                                            |
+
+### Requisitos Técnicos
+
+| Requisito                                        | Status | Observação                                                                   |
+| ------------------------------------------------ | ------ | ---------------------------------------------------------------------------- |
+| Usar .NET 6 ou superior                          | ✅      | Projeto usa .NET 8                                                           |
+| Aplicação dos princípios SOLID                   | ✅      | Aplica Clean Architecture, uso de interfaces, SRP, DI                        |
+| Uso do Entity Framework Core com InMemory        | ✅      | EF Core com banco InMemory configurado                                       |
+| API seguindo padrão RESTful                      | ✅      | Métodos HTTP bem definidos com URIs claras                                   |
+| Uso do Swagger para documentar a API             | ✅      | Swagger configurado com `Swashbuckle.AspNetCore`                             |
+| Validações de entrada de dados                   | ✅      | DTOs validados com `FluentValidation`                                        |
+| Testes automatizados com xUnit ou NUnit          | ✅      | Testes feitos com xUnit, 100% de cobertura na camada Application             |
+| DTOs para comunicação entre camadas              | ✅      | DTOs utilizados para entrada/saída da API                                    |
+| Status HTTP adequados (200, 201, 400, 404, etc.) | ✅      | Implementado corretamente                                                    |
+| Estrutura modular com separação por camadas      | ✅      | Clean Architecture aplicada: API, Application, Domain, Infrastructure, Cross |
+| Injeção de dependência (Dependency Injection)    | ✅      | DI configurada no `Program.cs`                                               |
+| Tratamento de erros adequado                     | ✅      | Middleware global para tratamento de exceções implementado                   |
+| Logging básico                                   | ✅      | Utilizado `ILogger<T>` com injeção de dependência                            |
+| Documentação clara no README                     | ✅      | README detalhado com instruções, arquitetura, exemplos, etc.                 |
+
+### Melhorias Adicionais
+
+| Funcionalidade extra                                  | Benefício                                                         |
+| ----------------------------------------------------- | ----------------------------------------------------------------- |
+| Filtro por intervalo de datas                         | Permite uma busca mais precisa e útil para relatórios ou análises |
+| Validação de tarefas com data no passado              | Evita erros de lógica e mantém integridade do sistema             |
+| Estrutura com subpastas e divisão organizada          | Escalabilidade e manutenibilidade do projeto                      |
+| Middleware de erro personalizado                      | Centraliza o tratamento e retorno de mensagens amigáveis          |
+| Relatório de cobertura com Coverlet + ReportGenerator | Permite avaliar qualidade dos testes e pontos a melhorar          |
 
 ---
 
-Sinta-se livre para contribuir ou sugerir melhorias ✨
+
+
 
