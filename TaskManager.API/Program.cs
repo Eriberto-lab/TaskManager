@@ -9,6 +9,8 @@ using FluentValidation.AspNetCore;
 using TaskManager.API.Validators;
 using TaskManager.CrossCutting.Middlewares;
 using TaskManager.Application.Interfaces;
+using Microsoft.Extensions.Options;
+using System.Reflection;
 
 
 
@@ -19,7 +21,13 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    // Ativa a leitura do arquivo XML gerado com os comentários do código
+    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    options.IncludeXmlComments(xmlPath);
+});
 
 
 
